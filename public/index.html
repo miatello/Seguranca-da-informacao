@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia Simétrica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label, input, button, textarea {
+            display: block;
+            margin: 10px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criptografia Simétrica</h1>
+    <form id="encryptForm">
+        <h3>Criptografar Texto</h3>
+        <label for="encryptText">Texto:</label>
+        <textarea id="encryptText"></textarea>
+
+        <label for="encryptKey">Chave Secreta:</label>
+        <input type="password" id="encryptKey">
+
+        <button type="submit">Criptografar</button>
+    </form>
+
+    <p><strong>Texto Criptografado:</strong></p>
+    <textarea id="encryptedOutput" readonly></textarea>
+
+    <form id="decryptForm">
+        <h3>Descriptografar Texto</h3>
+        <label for="decryptText">Texto Criptografado:</label>
+        <textarea id="decryptText"></textarea>
+
+        <label for="decryptKey">Chave Secreta:</label>
+        <input type="password" id="decryptKey">
+
+        <button type="submit">Descriptografar</button>
+    </form>
+
+    <p><strong>Texto Descriptografado:</strong></p>
+    <textarea id="decryptedOutput" readonly></textarea>
+</body>
+</html>
