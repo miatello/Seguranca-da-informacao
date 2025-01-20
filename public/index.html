@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criptografia Simétrica</title>
@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    <h1>Criptografia Simétrica</h1>
+    <h1>Criptografia Simétrica</h1> 
     <form id="encryptForm">
         <h3>Criptografar Texto</h3>
         <label for="encryptText">Texto:</label>
@@ -36,7 +36,7 @@
     <textarea id="encryptedOutput" readonly></textarea>
 
     <form id="decryptForm">
-        <h3>Descriptografar Texto</h3>
+        <h3>Descriptografar Texto</h3> 
         <label for="decryptText">Texto Criptografado:</label>
         <textarea id="decryptText"></textarea>
 
@@ -44,7 +44,7 @@
         <input type="password" id="decryptKey">
 
         <button type="submit">Descriptografar</button>
-    </form>
+    </form> 
 
     <p><strong>Texto Descriptografado:</strong></p>
     <textarea id="decryptedOutput" readonly></textarea>
@@ -54,7 +54,7 @@
             e.preventDefault();
             const text = document.getElementById("encryptText").value;
             const key = document.getElementById("encryptKey").value;
-
+ 
             const response = await fetch("/encrypt", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -65,18 +65,18 @@
         });
 
         document.getElementById("decryptForm").addEventListener("submit", async (e) => {
-            e.preventDefault();
+            e.preventDefault(); 
             const encryptedText = document.getElementById("decryptText").value;
             const key = document.getElementById("decryptKey").value;
 
             const response = await fetch("/decrypt", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ encryptedText, key }),
+                body: JSON.stringify({ encryptedText, key }), 
             });
             const result = await response.json();
             document.getElementById("decryptedOutput").value = result.decryptedText || result.error;
         });
     </script>
-</body>
+</body> 
 </html>
